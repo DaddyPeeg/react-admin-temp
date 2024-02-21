@@ -31,7 +31,7 @@ const Item = ({ title, to, icon }) => {
       }}
       ref={menuItemRef}
       icon={icon}
-      component={<Link to={to} />}
+      component={<Link to={`/react-admin-temp${to}`} />}
     >
       <Typography>{title}</Typography>
     </MenuItem>
