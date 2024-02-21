@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 // import 'react-pro-sidebar/dist/css/styles.css';
 import { Box, Typography, useTheme } from "@mui/material";
@@ -9,18 +9,27 @@ import { head, data, pages, charts } from "./navbarItems";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 const Item = ({ title, to, icon }) => {
+  const menuItemRef = useRef();
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
 
+  useEffect(() => {
+    if (menuItemRef.current) {
+      menuItemRef.current.children[0].style.height = "50px";
+    }
+  }, []);
+
   return (
     <MenuItem
       active={isActive}
+      className=""
       style={{
         color: colors.grey[100],
       }}
+      ref={menuItemRef}
       icon={icon}
       component={<Link to={to} />}
     >
@@ -62,6 +71,7 @@ const SidebarComp = () => {
       >
         <Menu
           // style={{ padding: '0px 10px' }}
+
           iconShape="square"
           menuItemStyles={{
             button: ({ level, active }) => {
@@ -146,7 +156,13 @@ const SidebarComp = () => {
               </Box>
             </Box>
           )}
-          <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+          <Box
+            flex={1}
+            height={!isCollapsed && "70vh"}
+            flexDirection={"column"}
+            overflow={"scroll"}
+            paddingLeft={isCollapsed ? undefined : "10%"}
+          >
             <Item title={head.title} to={head.to} icon={head.icon} />
             <Typography
               variant="h6"
