@@ -33,17 +33,29 @@ function App() {
             <div className="containment">
               <div className="dash">
                 <Routes>
-                  <Route path="/" element={<Dashboard />} />
-                  <Route path="/team" element={<Team />} />
-                  <Route path="/contacts" element={<Contacts />} />
-                  <Route path="/invoices" element={<Invoices />} />
-                  <Route path="/form" element={<Form />} />
-                  <Route path="/bar" element={<Bar />} />
-                  <Route path="/line" element={<Line />} />
-                  <Route path="/pie" element={<Pie />} />
-                  <Route path="/faq" element={<FAQ />} />
-                  <Route path="/geography" element={<Geography />} />
-                  <Route path="/calendar" element={<Calendar />} />
+                  <Route path="/react-admin-temp/" element={<Dashboard />} />
+                  <Route path="/react-admin-temp/team" element={<Team />} />
+                  <Route
+                    path="/react-admin-temp/contacts"
+                    element={<Contacts />}
+                  />
+                  <Route
+                    path="/react-admin-temp/invoices"
+                    element={<Invoices />}
+                  />
+                  <Route path="/react-admin-temp/form" element={<Form />} />
+                  <Route path="/react-admin-temp/bar" element={<Bar />} />
+                  <Route path="/react-admin-temp/line" element={<Line />} />
+                  <Route path="/react-admin-temp/pie" element={<Pie />} />
+                  <Route path="/react-admin-temp/faq" element={<FAQ />} />
+                  <Route
+                    path="/react-admin-temp/geography"
+                    element={<Geography />}
+                  />
+                  <Route
+                    path="/react-admin-temp/calendar"
+                    element={<Calendar />}
+                  />
                 </Routes>
               </div>
             </div>
