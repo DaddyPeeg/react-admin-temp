@@ -133,7 +133,7 @@ const SidebarComp = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../assets/user.png`}
+                  src={`assets/user.png`}
                   style={{
                     cursor: "pointer",
                     borderRadius: "50%",
